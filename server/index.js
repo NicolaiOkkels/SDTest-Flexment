@@ -18,6 +18,7 @@ app.use('/tasks', taskRoutes);
 app.use('/users', userRoutes);
 
 //const PORT = process.env.PORT || 5000;
+//test
 
 mongoose.connect("mongodb+srv://user:user@cluster0.rjqaazc.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(5000, () => console.log(`Server is running on port: ${PORT}`)))
