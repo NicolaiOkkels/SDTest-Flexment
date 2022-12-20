@@ -4,16 +4,15 @@ import { ObjectId } from 'mongodb';
 import {expect, it,describe, jest, afterAll, beforeAll} from '@jest/globals';
 import mongoose from 'mongoose';
 
-beforeAll(async () => {
-    await mongoose.connect(process.env.CONNECTION_URI)
-});
-
-afterAll(async() => {
-    await mongoose.connection.close();
-});
-
 describe("Test get tasks", () => {
     jest.setTimeout(15000);
+    beforeAll(async () => {
+        await mongoose.connect(process.env.CONNECTION_URI)
+    });
+
+    afterAll(async() => {
+        await mongoose.connection.close();
+    });
 
     it("should return", () => {
         supertest(app).get("/tasks").then((respons) => {
@@ -28,6 +27,13 @@ describe("Test get tasks", () => {
 });
 
 describe("test get /:id", () =>{
+    beforeAll(async () => {
+        await mongoose.connect(process.env.CONNECTION_URI)
+    });
+
+    afterAll(async() => {
+        await mongoose.connection.close();
+    });
 
     it("should return 200 OK from a specific task", () => {
         supertest(app).get(`/${ObjectId("637df6a4b706869a3b72ee29")}`).expect(200)
@@ -37,6 +43,13 @@ describe("test get /:id", () =>{
 
 describe("Test get users", () => {
     jest.setTimeout(15000);
+    beforeAll(async () => {
+        await mongoose.connect(process.env.CONNECTION_URI)
+    });
+
+    afterAll(async() => {
+        await mongoose.connection.close();
+    });
 
     it("should return", () => {
         supertest(app).get("/users").then((respons) => {
@@ -51,6 +64,13 @@ describe("Test get users", () => {
 });
 
 describe("test get /:id", () =>{
+    beforeAll(async () => {
+        await mongoose.connect(process.env.CONNECTION_URI)
+    });
+
+    afterAll(async() => {
+        await mongoose.connection.close();
+    });
 
     it("should return 200 OK from a specific user", () => {
         supertest(app).get(`/${ObjectId("637df653b706869a3b72ee25")}`).expect(200)
