@@ -20,7 +20,7 @@ pipeline {
             steps{
                 dir('server'){
                     echo 'Testing..'
-                    def uri = "MONGODB_URI=mongodb+srv://user:user@cluster0.rjqaazc.mongodb.net/?retryWrites=true&w=majority'"
+                    def uri = "MONGODB_URI=mongodb+srv://user:user@cluster0.rjqaazc.mongodb.net/?retryWrites=true&w=majority"
                     writeFile(file: '.env', text: uri)
                     sh 'npx jest --coverage'
                 }
