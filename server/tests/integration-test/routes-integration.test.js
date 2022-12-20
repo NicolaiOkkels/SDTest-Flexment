@@ -1,12 +1,7 @@
 import supertest from 'supertest';
 import { app } from '../../index';
 import { ObjectId } from 'mongodb';
-import {expect, it,describe, jest, afterAll, beforeAll} from '@jest/globals';
-import mongoose from 'mongoose';
-
-afterAll(async() => {
-    await mongoose.connection.close();
-});
+import {expect, it,describe, jest} from '@jest/globals';
 
 describe("Test get tasks", () => {
     jest.setTimeout(15000);
