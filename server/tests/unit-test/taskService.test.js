@@ -6,7 +6,6 @@ test('Calculate starting index of every page', () => {
      expect(startIndex).toBe(16);
 });
 
-
 test('String to string array', () => {
      const programingLanguages = convertStringToArray("C#, Javascript, PHP, Ruby");
      expect(programingLanguages).toEqual(["C#", "Javascript", "PHP", "Ruby"])
