@@ -15,6 +15,7 @@ test('Name for sign-in complies with constrains', () => {
     expect(name2).toBe(true);
 });
 
+
 test('First and last name should combine to one', () => {
     const name = fullName("Dean", "Calypso");
     expect(name).toBe("Dean Calypso");
