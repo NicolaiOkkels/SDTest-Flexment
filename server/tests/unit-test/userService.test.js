@@ -21,6 +21,7 @@ test('First and last name should combine to one', () => {
     expect(name).toBe("Dean Calypso");
 });
 
+
 describe('Error message return value', () => {
     const existingUser = true
     const newUser = false
